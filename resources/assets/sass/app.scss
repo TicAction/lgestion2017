@@ -7,3 +7,5 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+mix.sass('resources/assets/sass/app.sass', 'public/css')
+.sass('resources/assets/sass/admin.sass', 'public/css/admin');
