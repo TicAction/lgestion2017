@@ -3,9 +3,12 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
-@import "variables";
+//@import "variables";
 
-// Bootstrap
+ //Bootstrap
+//@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "~bootswatch-sass/cerulean/variables";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
-mix.sass('resources/assets/sass/app.sass', 'public/css')
-.sass('resources/assets/sass/admin.sass', 'public/css/admin');
+@import "~bootswatch-sass/cerulean/bootswatch";
+
