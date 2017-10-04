@@ -2,7 +2,9 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Date\Date;
 
 class Kid extends Model
 {
@@ -26,5 +28,9 @@ class Kid extends Model
     public function behaviors()
     {
         return $this->belongsToMany('App\Behavior');
+    }
+    public function setAnniversaryAttribute($anniversary)
+    {
+       $this->attributes['anniversary'] = Date::createFromFormat('d-m-Y',$anniversary);
     }
 }

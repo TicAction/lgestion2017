@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Behavior;
 use App\Kid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class KidController extends Controller
@@ -17,10 +19,6 @@ class KidController extends Controller
     public function index()
     {
         $kids = Kid::all();
-        $req = Kid::selectRaw ("monthname(anniversary) mois, count(*) tata")
-                            ->groupBy('anniversary')
-                            ->orderByRaw('min(created_at) desc')->get()->toArray();
-
 
         return view('kids.index',compact('kids','req'));
     }

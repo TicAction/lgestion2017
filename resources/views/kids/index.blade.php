@@ -15,7 +15,7 @@
     <tr>
         <td>{{$kid->firstname}}</td>
         <td>{{$kid->lastname}}</td>
-        <td>{{$kid->anniversary}}</td>
+        <td>{{ucfirst(\Jenssegers\Date\Date::createFromFormat('Y-m-d H:i:s',$kid->anniversary)->format('l d F Y'))}}</td>
         <td>{{$kid->age}} ans</td>
         <td>
             {{link_to_route('kid_show','Voir',$kid->id,['class'=>'btn btn-primary btn-xs'])}}
@@ -33,11 +33,4 @@
     @endforeach
 </table>
 
-
-
-    @foreach($req as $stat)
-
-    {{$stat['mois']}} {{$stat['tata']}}<br>
-
-    @endforeach
 @endsection
